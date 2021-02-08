@@ -1,0 +1,2106 @@
+{
+	"info": {
+		"_postman_id": "b433fbf0-1e67-4af2-84ef-4695d8f9ebb2",
+		"name": "DremioAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account API",
+			"item": [
+				{
+					"name": "Get a user by name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v3/user/by-name/{{name}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"by-name",
+								"{{name}}"
+							]
+						},
+						"description": "Only users with administrator privileges can use the accounts API."
+					},
+					"response": []
+				},
+				{
+					"name": "Get a user by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v3/user/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a group by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/group/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"group",
+								"{{id}}"
+							]
+						},
+						"description": "Enterprise Only"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a group by name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/group/by-name/{{name}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"group",
+								"by-name",
+								"{{name}}"
+							]
+						},
+						"description": "Enterprise Only"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "GET /user/{id}/token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/user/{{id}}/token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"{{id}}",
+								"token"
+							]
+						},
+						"description": "Lists all the personal access tokens associated with a specific user, based on the user ID."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /user/{id}/token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/user/{{id}}/token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"{{id}}",
+								"token"
+							]
+						},
+						"description": "Creates a personal access token associated with a specific user, based on the user ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /user/{id}/token",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/user/{{id}}/token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"{{id}}",
+								"token"
+							]
+						},
+						"description": "Deletes all personal access tokens associated with a user, based on the user ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /user/{id}/token/{tid}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/user/{{id}}/token/{{tid}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"{{id}}",
+								"token",
+								"{{tid}}"
+							]
+						},
+						"description": "Deletes a specific personal access token for a user, based on the user ID and token ID."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token API",
+			"item": []
+		},
+		{
+			"name": "Catalog API",
+			"item": [
+				{
+					"name": "GET /catalog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v3/catalog",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog"
+							]
+						},
+						"description": "Lists all top-level catalog containers.\r\n\r\nTo obtain more information about a specific container including the container's children, use either GET /catalog/{id} or GET /catalog/by-path/{path}."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /catalog/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}"
+							]
+						},
+						"description": "Retrieves information about a specific catalog entity (source, space, folder, file or dataset) using it's ID. Child information (if applicable) of the catalog entity are also retrieved along with their ID, path, type, and containerType."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /catalog/{id}/graph",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}/graph",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}",
+								"graph"
+							]
+						},
+						"description": "Introduced in Dremio 4.0.0. - Enterprise Only\r\n\r\nRetrieves graph information about a specific catalog entity (source, space, folder, file or dataset) using it's ID. Child information (if applicable) of the catalog entity are also retrieved."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /catalog/by-path/{path}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/by-path/{{path}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"by-path",
+								"{{path}}"
+							]
+						},
+						"description": "Retrieves information about a specific catalog entity (source, space, folder, file or dataset) using it's path. Child information (if applicable) of the catalog entity are also retrieved along with their ID, path, type, and containerType."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/v3/catalog/{id}/collaboration/tag",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}}/collaboration/tag",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}}",
+								"collaboration",
+								"tag"
+							]
+						},
+						"description": "Retrieves tags for a catalog entity."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/v3/catalog/{id}/collaboration/wiki",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}}/collaboration/wiki",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}}",
+								"collaboration",
+								"wiki"
+							]
+						},
+						"description": "Retrieves wiki content for a catalog entity."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/v3/catalog - Source",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entityType\": \"source\",\r\n  \"config\": {\r\n    \"scriptsEnabled\": true,\r\n    \"showHiddenIndices\": false,\r\n    \"showIdColumn\": false,\r\n    \"readTimeoutMillis\": 60000,\r\n    \"scrollTimeoutMillis\": 300000,\r\n    \"usePainless\": true,\r\n    \"scrollSize\": 4000,\r\n    \"allowPushdownOnNormalizedOrAnalyzedFields\": false,\r\n    \"warnOnRowCountMismatch\": false,\r\n    \"encryptionValidationMode\": \"CERTIFICATE_AND_HOSTNAME_VALIDATION\",\r\n    \"hostList\": [\r\n      {\r\n        \"hostname\": \"172.25.0.94\",\r\n        \"port\": 9200\r\n      }\r\n    ],\r\n    \"authenticationType\": \"ANONYMOUS\",\r\n    \"sslEnabled\": false,\r\n    \"useWhitelist\": false\r\n  },\r\n  \"type\": \"ELASTIC\",\r\n  \"name\": \"my_elasticsearch\",\r\n  \"metadataPolicy\": {\r\n    \"authTTLMs\": 86400000,\r\n    \"namesRefreshMs\": 3600000,\r\n    \"datasetRefreshAfterMs\": 3600000,\r\n    \"datasetExpireAfterMs\": 10800000,\r\n    \"datasetUpdateMode\": \"PREFETCH_QUERIED\",\r\n    \"deleteUnavailableDatasets\": true,\r\n    \"autoPromoteDatasets\": false\r\n  },\r\n  \"accelerationGracePeriodMs\": 10800000,\r\n  \"accelerationRefreshPeriodMs\": 3600000,\r\n  \"accelerationNeverExpire\": false,\r\n  \"accelerationNeverRefresh\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/catalog",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog"
+							]
+						},
+						"description": "Creates a new catalog entity.\r\n\r\nIn this example, a new Elasticsearch source entity, my_elasticsearch, is created. The my_elasticsearch source has folder called yelp with four (4) physical datasets (PDS) (business, checkin, review, and user)."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/v3/catalog - Space",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entityType\": \"space\",\r\n  \"name\": \"Pebbles\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/catalog",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog"
+							]
+						},
+						"description": "Creates a new catalog entity.\r\n\r\nIn this example, a new space entity, Pebbles, is created."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/v3/catalog - Folder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entityType\": \"folder\",\r\n  \"path\": [\r\n    \"Pebbles\",\r\n    \"Color\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/catalog",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog"
+							]
+						},
+						"description": "Creates a new catalog entity.\r\n\r\nIn this example, a new folder entity, Color, is created in the Pebbles space."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /catalog/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}"
+							]
+						},
+						"description": "Promotes a file or folder in a file-based source to a physical dataset (PDS). The supplied path is used to determine what entity is promoted.\r\n\r\nFiles or folders inside a source can be promoted to physical datasets. This converts the folder/file to a dataset; the dataset then has a new ID since it is a new entity."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /catalog/{id}/refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}/refresh",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}",
+								"refresh"
+							]
+						},
+						"description": "Refreshes a catalog entity.\r\n\r\nRefreshes all the dependent reflections of the specified physical dataset. This endpoint only functions with physical dataset IDss and has no response object."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/v3/catalog/{id}/collaboration/tag",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"tags\": [\"newtag\",\"anothernewtag\"],\r\n \"version\":11\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}}/collaboration/tag",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}}",
+								"collaboration",
+								"tag"
+							]
+						},
+						"description": "Creates and updates Tags for a catalog entity."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/v3/catalog/{id}/collaboration/wiki",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"text\": \"This is new wiki content\",\r\n \"version\": 3\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}}/collaboration/wiki",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}}",
+								"collaboration",
+								"wiki"
+							]
+						},
+						"description": "Creates Wiki content for a catalog entity."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /catalog/{id} - Update Source",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"entityType\": \"source\",\r\n    \"id\": \"a7fe6900-a9d1-4afe-aeb7-3dc5ddfca5b7\",\r\n    \"tag\": \"0\",\r\n    \"type\": \"ELASTIC\",\r\n    \"name\": \"my_elasticsearch\",\r\n    \"accelerationNeverRefresh\": true,\r\n    \"config\": {\r\n        \"hostList\": [\r\n            {\r\n                \"hostname\": \"172.25.0.94\",\r\n                \"port\": 9200\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}"
+							]
+						},
+						"description": "Updates existing datasets and sources.\r\n\r\nIn this example, a source entity, my_elasticsearch, is updated with \"accelerationNeverRefresh\": true. The ID is obtained from the POST /catalog examples."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /catalog/{id} - Update Space",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"entityType\": \"space\",\r\n    \"id\": \"35f9ffe7-fd02-4509-aa99-ce626f123537\",\r\n    \"name\": \"Pebbles\",\r\n    \"tag\": \"0\",\r\n    \"accessControlList\": {\r\n        \"version\": \"0\",\r\n        \"users\": [\r\n            {\r\n                \"id\": \"2002c74e-3ea0-470b-bdeb-9f680cecaebb\",\r\n                \"permissions\": [\r\n                    \"READ\"\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}"
+							]
+						},
+						"description": "Updates existing datasets and sources.\r\n\r\nIn this example, a space entity, Pebbles, is updated by giving a user READ permission. The space entity ID is obtained from the POST /catalog examples. The user ID is obtained by executing GET localhost:9047/api/v3/user/by-name/test1 for the test1 user. See GET /user/by-name."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /catalog/{id} - Update Folder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entityType\": \"folder\",\r\n  \"id\": \"37732cdf-c491-4a15-afbf-f0e0a7563e40\",\r\n  \"path\": [\r\n    \"Pebbles\",\r\n    \"Color\"\r\n  ],\r\n  \"tag\": \"0\",\r\n  \"accessControlList\": {\r\n        \"version\": \"0\",\r\n        \"users\": [\r\n            {\r\n                \"id\": \"2002c74e-3ea0-470b-bdeb-9f680cecaebb\",\r\n                \"permissions\": [\r\n                    \"READ\"\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}"
+							]
+						},
+						"description": "Updates existing datasets and sources.\r\n\r\nIn this example, a folder entity, Color, is updated by giving a user READ permission. The folder entity ID is obtained from the POST /catalog examples. The user ID is obtained by executing GET localhost:9047/api/v3/user/by-name/test1 for the test1 user. See GET /user/by-name."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /catalog/{id} - Update Dataset",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entityType\": \"dataset\",\r\n  \"id\": \"e2676566-1946-4f11-8e21-9fbb366fa77a\",\r\n  \"path\": [\r\n    \"Pebbles\",\r\n    \"Color\",\r\n    \"my_elastic_dataset\"\r\n  ],\r\n  \"tag\": \"0\",\r\n    \"type\": \"VIRTUAL_DATASET\",\r\n    \"sql\": \"select * from business\",\r\n    \"sqlContext\": [\"my_elasticsearch\", \"yelp\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}"
+							]
+						},
+						"description": "Updates existing datasets and sources.\r\n\r\nIn this example, a virtual dataset (VDS) entity, my_elastic_dataset, is updated by selecting the content from the business PDS of the my_elasticsearch source and yelp folder. The ID is obtained from the POST /catalog examples."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /catalog/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/catalog/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"catalog",
+								"{{id}}"
+							]
+						},
+						"description": "Deletes an existing catalog entity (source, space, folder in a space, PDS dataset, and VDS dataset).\r\n\r\nIf you have a file/folder in a file-based source that has been promoted (it's now a PDS) and then delete it, the file reverts to the original format. For example, if a PDS was originally a text file, it reverts to a text file after the PDS is deleted."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reflection API",
+			"item": [
+				{
+					"name": "GET /reflection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/reflection",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"reflection"
+							]
+						},
+						"description": "Enterprise Edition only\r\n\r\nRetrieves all reflections. Only users with administrator privileges can use the reflections API."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /reflection/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/reflection/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"reflection",
+								"{{id}}"
+							]
+						},
+						"description": "Retrieves a specific reflection.\r\nOnly users with administrator privileges can use the reflections API."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /reflection/summary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/reflection/summary",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"reflection",
+								"summary"
+							]
+						},
+						"description": "Enterprise Edition only\r\n\r\nRetrieves all reflections as a summary."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /reflection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entityType\": \"reflection\" [immutable, generated by Dremio],\r\n  \"id\": String [immutable, generated by Dremio],\r\n  \"tag\": String [immutable, generated by Dremio],\r\n  \"name\": String,\r\n  \"enabled\": Boolean,\r\n  \"createdAt\": String (RFC3339 date) [immutable, generated by Dremio],\r\n  \"updatedAt\": String (RFC3339 date) [immutable, generated by Dremio],\r\n  \"type\": String [\"AGGREGATION\", \"RAW\"] [immutable after creation],\r\n  \"datasetId\": String [immutable after creation],\r\n  \"currentSizeBytes\": Number [immutable, generated by Dremio],\r\n  \"totalSizeBytes\": Number [immutable, generated by Dremio],\r\n  \"status\": Reflection Status [immutable, generated by Dremio],\r\n  \"dimensionFields\": [Reflection Field With Granularity] [optional, only valid for AGGREGATION],\r\n  \"measureFields\": [Reflection Field] [optional, only valid for AGGREGATION],\r\n  \"displayFields\": [Reflection Field] [optional, only valid for RAW],\r\n  \"distributionFields\": [Reflection Field] [optional],\r\n  \"partitionFields\": [Reflection Field] [optional],\r\n  \"sortFields\": [Reflection Field] [optional],\r\n  \"partitionDistributionStrategy\": String [\"CONSOLIDATED\", \"STRIPED\"],\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/reflection",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"reflection"
+							]
+						},
+						"description": "Creates a new reflection.\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /reflection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entityType\": \"reflection\" [immutable, generated by Dremio],\r\n  \"id\": String [immutable, generated by Dremio],\r\n  \"tag\": String [immutable, generated by Dremio],\r\n  \"name\": String,\r\n  \"enabled\": Boolean,\r\n  \"createdAt\": String (RFC3339 date) [immutable, generated by Dremio],\r\n  \"updatedAt\": String (RFC3339 date) [immutable, generated by Dremio],\r\n  \"type\": String [\"AGGREGATION\", \"RAW\"] [immutable after creation],\r\n  \"datasetId\": String [immutable after creation],\r\n  \"currentSizeBytes\": Number [immutable, generated by Dremio],\r\n  \"totalSizeBytes\": Number [immutable, generated by Dremio],\r\n  \"status\": Reflection Status [immutable, generated by Dremio],\r\n  \"dimensionFields\": [Reflection Field With Granularity] [optional, only valid for AGGREGATION],\r\n  \"measureFields\": [Reflection Field] [optional, only valid for AGGREGATION],\r\n  \"displayFields\": [Reflection Field] [optional, only valid for RAW],\r\n  \"distributionFields\": [Reflection Field] [optional],\r\n  \"partitionFields\": [Reflection Field] [optional],\r\n  \"sortFields\": [Reflection Field] [optional],\r\n  \"partitionDistributionStrategy\": String [\"CONSOLIDATED\", \"STRIPED\"],\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/reflection/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"reflection",
+								"{{id}}"
+							]
+						},
+						"description": "Updates a specific reflection."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /reflection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/reflection/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"reflection",
+								"{{id}}"
+							]
+						},
+						"description": "Deletes a specific reflection and all associated information. This removes the materialization associated with the reflection asynchronously, after a brief delay. This wait is so that ongoing queries, if any, complete as planned."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job API",
+			"item": [
+				{
+					"name": "GET /api/v3/job/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/job/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"job",
+								"{{id}}"
+							]
+						},
+						"description": "Retrieves a job's status."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/v3/job/{id}/results?offset={offset}&limit={limit}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/job/{{id}}}/results?offset&limit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"job",
+								"{{id}}}",
+								"results"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": null
+								},
+								{
+									"key": "limit",
+									"value": null
+								}
+							]
+						},
+						"description": "Retrieve results for a completed job. (Params are used for offset and limit)\r\n\r\nWhen retrieving the results for a completed job, The JobResults endpoint for a completed job supports pagination.\r\n\r\noffset - Sets where you want to start from. Default: 0\r\nlimit - Determines how many rows are returned (maximum of 500). Default: 100"
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/v3/job/{id}/cancel",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/job/{{id}}/cancel",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"job",
+								"{{id}}",
+								"cancel"
+							]
+						},
+						"description": "Cancels a running job."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Workload Management API",
+			"item": [
+				{
+					"name": "GET /api/v3/wlm/queue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/wlm/queue",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"wlm",
+								"queue"
+							]
+						},
+						"description": "Retrieves list of queues."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/v3/wlm/queue/by-name/{name}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/wlm/queue/by-name/{{name}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"wlm",
+								"queue",
+								"by-name",
+								"{{name}}"
+							]
+						},
+						"description": "Retrieves information about a specific queue by name."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/v3/wlm/queue/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/wlm/queue/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"wlm",
+								"queue",
+								"{{id}}"
+							]
+						},
+						"description": "Retrieves information about a specific queue by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/v3/wlm/queue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"New Queue\",\r\n  \"maxQueryMemoryPerNodeBytes\": 167772160,\r\n  \"maxMemoryPerNodeBytes\": 300000000,\r\n  \"cpuTier\": \"HIGH\",\r\n  \"maxAllowedRunningJobs\": 2,\r\n  \"maxStartTimeoutMs\": 60000,\r\n  \"maxRunTimeoutMs\": 600000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/wlm/queue",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"wlm",
+								"queue"
+							]
+						},
+						"description": "Enterprise Edition only\r\n\r\nCreates a new queue."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/v3/wlm/queue/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"5992f098-15d4-40b3-b158-08ea8f1f5067\",\r\n  \"tag\": \"0\",\r\n  \"name\": \"New Queue\",\r\n  \"maxMemoryPerNodeBytes\": 300000000,\r\n  \"maxQueryMemoryPerNodeBytes\": 300000000,\r\n  \"cpuTier\": \"HIGH\",\r\n  \"maxAllowedRunningJobs\": 5,\r\n  \"maxStartTimeoutMs\": 60000,\r\n  \"maxRunTimeoutMs\": 600000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/wlm/queue/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"wlm",
+								"queue",
+								"{{id}}"
+							]
+						},
+						"description": " Enterprise Edition only\r\n\r\nUpdates a queue's attributes by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/v3/wlm/queue/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/wlm/queue/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"wlm",
+								"queue",
+								"{{id}}"
+							]
+						},
+						"description": " Enterprise Edition only\r\n\r\nDeletes a specific queue by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/v3/wlm/rule",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/wlm/rule",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"wlm",
+								"rule"
+							]
+						},
+						"description": "Enterprise Edition only\r\n\r\nRetrieves a list of rules."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/v3/wlm/rule",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tag\": \"0\",\r\n  \"rules\": [\r\n    {\r\n      \"name\": \"Rule name\",\r\n      \"conditions\": \"query condition\",\r\n      \"acceptId\": \"ID\",\r\n      \"acceptName\": \"Rule name\",\r\n      \"action\": \"PLACE\",\r\n      \"id\": \"ID\"\r\n    }\r\n    ]\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/wlm/rule",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"wlm",
+								"rule"
+							]
+						},
+						"description": " Enterprise Edition only\r\n\r\nCreates new rules, updates existing rules, and deletes rules.\r\n\r\nA ruleset is an array of rules where order matters. The most high priority rule is first, and so on. Through the WLM REST API, you interact with the ruleset, not any individual rules.\r\n\r\nWhen you remove a rule from the ruleset (the array of rules) list, it is deleted."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SQL API",
+			"item": [
+				{
+					"name": "POST /api/v3/sql",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sql\": \"SELECT * FROM information_schema.\\\"tables\\\" LIMIT 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/sql",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"sql"
+							]
+						},
+						"description": "Submits a SQL query."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vote API",
+			"item": [
+				{
+					"name": "GET /api/v3/vote",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v3/vote",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"vote"
+							]
+						},
+						"description": "List all votes as a summary.\r\n\r\nOnly users with administrator privileges can use this endpoint."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJson = pm.response.json();\r",
+							"pm.environment.set(\"token\", \"_dremio\" + responseJson.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"{{user}}\",\r\n  \"password\": \"{{pass}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/apiv2/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"apiv2",
+						"login"
+					]
+				},
+				"description": "This will grab your Token and set it as an environment variable. "
+			},
+			"response": []
+		}
+	]
+}
