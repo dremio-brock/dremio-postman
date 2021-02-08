@@ -1,5 +1,5 @@
 # dremio-postman
-collection of Postman objects for Dremio
+Collection of Postman objects for Dremio. Organized to look similar to http://docs.dremio.com/rest-api/
 
 # Postman Collection
 
